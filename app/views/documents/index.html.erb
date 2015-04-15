@@ -1,0 +1,98 @@
+<%- model_class = Document -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:box_id) %></th>
+      <th><%= model_class.human_attribute_name(:document_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:numero_credito) %></th>
+      <th><%= model_class.human_attribute_name(:numero_escritura) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_escritura) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_notario) %></th>
+      <th><%= model_class.human_attribute_name(:numero_notaria) %></th>
+      <th><%= model_class.human_attribute_name(:entity_id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_acreditado) %></th>
+      <th><%= model_class.human_attribute_name(:paterno_acreditado) %></th>
+      <th><%= model_class.human_attribute_name(:materno_acreditado) %></th>
+      <th><%= model_class.human_attribute_name(:originator_id) %></th>
+      <th><%= model_class.human_attribute_name(:cofi_id) %></th>
+      <th><%= model_class.human_attribute_name(:calle) %></th>
+      <th><%= model_class.human_attribute_name(:colonia) %></th>
+      <th><%= model_class.human_attribute_name(:municipio) %></th>
+      <th><%= model_class.human_attribute_name(:estado_id) %></th>
+      <th><%= model_class.human_attribute_name(:jurisdiccion_id) %></th>
+      <th><%= model_class.human_attribute_name(:folio_real_rpp) %></th>
+      <th><%= model_class.human_attribute_name(:seccion_rpp) %></th>
+      <th><%= model_class.human_attribute_name(:libro_rpp) %></th>
+      <th><%= model_class.human_attribute_name(:volumen_rpp) %></th>
+      <th><%= model_class.human_attribute_name(:partida_rpp) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_rpp) %></th>
+      <th><%= model_class.human_attribute_name(:entidad_id) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_avaluo) %></th>
+      <th><%= model_class.human_attribute_name(:monto_avaluo) %></th>
+      <th><%= model_class.human_attribute_name(:nombre_archivo) %></th>
+      <th><%= model_class.human_attribute_name(:numero_demanda) %></th>
+      <th><%= model_class.human_attribute_name(:numero_expediente) %></th>
+      <th><%= model_class.human_attribute_name(:numero_juzgado) %></th>
+      <th><%= model_class.human_attribute_name(:ubicacion_juzgado) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_auto_admisorio) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.box.box_number %></td>
+        <td><%= document.document_type_id %></td>
+        <td><%= document.numero_credito %></td>
+        <td><%= document.numero_escritura %></td>
+        <td><%= document.fecha_escritura %></td>
+        <td><%= document.nombre_notario %></td>
+        <td><%= document.numero_notaria %></td>
+        <td><%= document.entity_id %></td>
+        <td><%= document.nombre_acreditado %></td>
+        <td><%= document.paterno_acreditado %></td>
+        <td><%= document.materno_acreditado %></td>
+        <td><%= document.originator_id %></td>
+        <td><%= document.cofi_id %></td>
+        <td><%= document.calle %></td>
+        <td><%= document.colonia %></td>
+        <td><%= document.municipio %></td>
+        <td><%= document.estado_id %></td>
+        <td><%= document.jurisdiccion_id %></td>
+        <td><%= document.folio_real_rpp %></td>
+        <td><%= document.seccion_rpp %></td>
+        <td><%= document.libro_rpp %></td>
+        <td><%= document.volumen_rpp %></td>
+        <td><%= document.partida_rpp %></td>
+        <td><%= document.fecha_rpp %></td>
+        <td><%= document.entidad_id %></td>
+        <td><%= document.fecha_avaluo %></td>
+        <td><%= document.monto_avaluo %></td>
+        <td><%= document.nombre_archivo %></td>
+        <td><%= document.numero_demanda %></td>
+        <td><%= document.numero_expediente %></td>
+        <td><%= document.numero_juzgado %></td>
+        <td><%= document.ubicacion_juzgado %></td>
+        <td><%= document.fecha_auto_admisorio %></td>
+        <td><%=l document.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_document_path(document), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      document_path(document),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_document_path,
+            :class => 'btn btn-primary' %>

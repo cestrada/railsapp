@@ -1,0 +1,25 @@
+<%- model_class = Document -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <div class="text-center">
+  	<span class="label label-success" style="font-size:14px;">Documentos capturados: <%= @box.count_docs %></span>
+  </div>
+</div>
+<%= render :partial => 'form' %>
+
+<script>
+  $(function() {
+      $(document).on('keypress', function(e) {
+          var that = document.activeElement;
+          if( e.which == 13 ) {
+            if(that.tabIndex == 35 || that.tabIndex == 40){
+
+            }
+            else {
+              e.preventDefault();
+              $('[tabIndex=' + (+that.tabIndex + 1) + ']')[0].focus();
+            }
+          }
+      });
+  });
+</script>

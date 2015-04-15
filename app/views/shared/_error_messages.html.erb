@@ -1,0 +1,8 @@
+<% if target.errors.any? %>
+	<div class="alert alert-danger closed bold-center absolute" data-dismiss="alert" id="timer-alert">
+		<% target.errors.full_messages.each do |msg| %>
+		<a class="close" data-dismiss="alert">x</a>
+		<%= msg %>
+		<% end %>
+	</div>
+<% end %>

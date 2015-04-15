@@ -1,0 +1,200 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  authlogic:
+    attributes:
+      user:
+        username: "Usuario"
+        email: "Correo"
+        password: "Contraseña"
+        change_password: "Cambiar Contraseña"
+        password_confirmation: "Confirmar Contraseña"
+      user_session:
+        username: "El usuario"
+        password: "La contraseña"
+    error_messages:
+      no_authentication_details: "No proporcionó ningún detalle para la autenticación."
+      login_blank: "no puede estar vacío."
+      login_not_found: "es inválido."
+      login_invalid: "Debe usar sólo letras, numeros y caracteres especiales."
+      consecutive_failed_logins_limit_exceeded: "Su cuenta ha sido deshabilitada. Contacte a su administrador para rehabilitarla."
+      email_invalid: "Debe de ser una cuenta de correo"
+      password_blank: "no puede estar vacía."
+      password_invalid: "es inválida"
+      not_active: "Su cuenta está desactivada."
+      not_confirmed: "Su cuenta no ha sido confirmada."
+      not_approved: "Su cuenta no ha sido aprobada."
+  roles:
+    index:
+      title: "Roles"
+  users:
+    index:
+      title: "Usuarios"
+  document_types:
+    index:
+      title: "Tipos de documento"
+  originators:
+    index:
+      title: "Originadores"
+  entities:
+    index:
+      title: "Entidades"
+  cofis:
+    index:
+      title: "COFI"
+  helpers:
+    select:
+      prompt: Por favor seleccione
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}
+    actions: "Acciones"
+    links:
+      back: "Atrás"
+      cancel: "Cancelar"
+      confirm: "¿Está seguro que desea eliminarlo?"
+      destroy: "Eliminar"
+      new: "Nuevo"
+      edit: "Editar"
+    titles:
+      edit: "Editar %{model}"
+      save: "Guardar %{model}"
+      new: "Nuevo %{model}"
+      delete: "Eliminar %{model}"
+
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d %b"
+      long: "%d %B, %Y"
+      invalid_form: 'Los datos de la forma son inválidos'
+      correct_errors: 'Por favor corrija los errores indicados'
+
+  attributes:
+    id: 'ID'
+    email: 'Correo electrónico'
+    password: 'Contraseña'
+    password_confirmation: 'Confirmar contraseña'
+    created_at: 'Fecha de creación'
+    name: 'Nombre'
+    username: 'Nombre de usuario'
+    beginning_date: 'Día de inicio'
+    end_date: 'Día de corte'
+    role_id: 'Rol de usuario'
+    failed_login_count: 'Estatus'
+    box_number: 'No. de caja'
+    document_type_id: 'Tipo de documento'
+    numero_credito: 'Número de crédito'
+    numero_escritura: 'Número de escritura'
+    fecha_escritura: 'Fecha de escritura'
+    nombre_notario: 'Nombre del notario'
+    numero_notaria: 'Número de notaria'
+    entity_id: 'Entidad'
+    nombre_acreditado: 'Nombre (acreditado)'
+    paterno_acreditado: 'Apellido paterno (acreditado)'
+    materno_acreditado: 'Apellido materno (acreditado)'
+    nombre_coacreditado_1: 'Nombre (acreditado 1)'
+    paterno_coacreditado_1: 'Apellido paterno (acreditado 1)'
+    materno_coacreditado_1: 'Apellido materno (acreditado 1)'
+    nombre_coacreditado_2: 'Nombre (acreditado 2)'
+    paterno_coacreditado_2: 'Apellido paterno (acreditado 2)'
+    materno_coacreditado_2: 'Apellido materno (acreditado 2)'
+    nombre_coacreditado_3: 'Nombre (acreditado 3)'
+    paterno_coacreditado_3: 'Apellido paterno (acreditado 3)'
+    materno_coacreditado_3: 'Apellido materno (acreditado 3)'
+    originator_id: 'Originador'
+    cofi_id: 'COFI'
+    folio_real_rpp: 'Folio Real RPP'
+    seccion_rpp: 'Sección RPP'
+    libro_rpp: 'Libro RPP'
+    volumen_rpp: 'Volumen RPP'
+    partida_rpp: 'Partida RPP'
+    fecha_rpp: 'Fecha RPP'
+    fecha_avaluo: 'Fecha de avalúo'
+    monto_avaluo: 'Monto de avalúo'
+    nombre_archivo: 'Nombre del archivo'
+    numero_demanda: 'Número de demanda'
+    numero_expediente: 'Número de expediente'
+    numero_juzgado: 'Número de juzgado'
+    ubicacion_juzgado: 'Ubicación de juzgado'
+    fecha_auto_admisorio: 'Fecha de auto admisorio'
+    entity_name: 'Entidad'
+    originator_name: 'Originador'
+    cofi_name: 'COFI'
+    estado_name: 'Estado'
+    entidad_name: 'Entidad'
+
+  activerecord:
+    models:
+      user: 'Usuario'
+      role: 'Rol'
+      box: 'Caja'
+      originator: 'Originador'
+      document_type: 'Tipo de documento'
+      entity: 'Entidad'
+      cofi: 'COFI'
+      document: 'Documento'
+
+    errors:
+      messages:
+        blank: 'campo obligatorio'
+        empty: 'no puede estar vacío'
+        not_a_number: 'sólo puede contener números'
+        not_an_integer: 'debe ser un entero'
+        inclusion: 'no está incluido en la lista'
+        exclusion: 'está reservado'
+        confirmation: 'no coincide con la confirmación'
+        accepted: 'debe ser aceptado'
+        empty: 'no puede estar vacío'
+        taken: 'ya está en uso'
+        too_short: 'debe de contener al menos 9 caracteres'
+        too_long: 'es demasiado largo (%{count} caracteres máximo)'
+        greater_than: 'debe de ser mayor a 0'
+        record_invalid: 'la validación falló: %{errors}'
+        invalid: 'no tiene formato de correo válido'
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+    day_names:
+      - 
+      - domingo
+      - lunes
+      - martes
+      - miércoles
+      - jueves
+      - viernes
+      - sábado
+
+    month_names:
+      - 
+      - Enero
+      - Febrero
+      - Marzo
+      - Abril
+      - Mayo
+      - Junio
+      - Julio
+      - Agosto
+      - Septiembre
+      - Octubre
+      - Noviembre
+      - Diciembre
+
+    abbr_month_names:
+      - 
+      - Ene
+      - Feb
+      - Mar
+      - Abr
+      - May
+      - Jun
+      - Jul
+      - Ago
+      - Sep
+      - Oct
+      - Nov
+      - Dic

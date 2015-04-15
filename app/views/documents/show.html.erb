@@ -1,0 +1,101 @@
+<%- model_class = Document -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:box_id) %>:</strong></dt>
+  <dd><%= @document.box.box_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:document_type_id) %>:</strong></dt>
+  <dd><%= @document.document_type.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_credito) %>:</strong></dt>
+  <dd><%= @document.numero_credito %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_escritura) %>:</strong></dt>
+  <dd><%= @document.numero_escritura %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_escritura) %>:</strong></dt>
+  <dd><%= @document.fecha_escritura %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre_notario) %>:</strong></dt>
+  <dd><%= @document.nombre_notario %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_notaria) %>:</strong></dt>
+  <dd><%= @document.numero_notaria %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:entity_id) %>:</strong></dt>
+  <dd><%= @document.entity.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre_acreditado) %>:</strong></dt>
+  <dd><%= @document.nombre_acreditado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:paterno_acreditado) %>:</strong></dt>
+  <dd><%= @document.paterno_acreditado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:materno_acreditado) %>:</strong></dt>
+  <dd><%= @document.materno_acreditado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre_coacreditado_1) %>:</strong></dt>
+  <dd><%= @document.nombre_coacreditado_1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:paterno_coacreditado_1) %>:</strong></dt>
+  <dd><%= @document.paterno_coacreditado_1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:materno_coacreditado_1) %>:</strong></dt>
+  <dd><%= @document.materno_coacreditado_1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre_coacreditado_2) %>:</strong></dt>
+  <dd><%= @document.nombre_coacreditado_2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:paterno_coacreditado_2) %>:</strong></dt>
+  <dd><%= @document.paterno_coacreditado_2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:materno_coacreditado_2) %>:</strong></dt>
+  <dd><%= @document.materno_coacreditado_2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre_coacreditado_3) %>:</strong></dt>
+  <dd><%= @document.nombre_coacreditado_3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:paterno_coacreditado_3) %>:</strong></dt>
+  <dd><%= @document.paterno_coacreditado_3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:materno_coacreditado_3) %>:</strong></dt>
+  <dd><%= @document.materno_coacreditado_3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:originator_id) %>:</strong></dt>
+  <dd><%= @document.originator.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cofi_id) %>:</strong></dt>
+  <dd><%= @document.cofi.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:calle) %>:</strong></dt>
+  <dd><%= @document.calle %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:colonia) %>:</strong></dt>
+  <dd><%= @document.colonia %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:municipio) %>:</strong></dt>
+  <dd><%= @document.municipio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:estado_id) %>:</strong></dt>
+  <dd><%= @document.estado.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:jurisdiccion_id) %>:</strong></dt>
+  <dd><%= @document.jurisdiccion.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:folio_real_rpp) %>:</strong></dt>
+  <dd><%= @document.folio_real_rpp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:seccion_rpp) %>:</strong></dt>
+  <dd><%= @document.seccion_rpp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:libro_rpp) %>:</strong></dt>
+  <dd><%= @document.libro_rpp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:volumen_rpp) %>:</strong></dt>
+  <dd><%= @document.volumen_rpp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:partida_rpp) %>:</strong></dt>
+  <dd><%= @document.partida_rpp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_rpp) %>:</strong></dt>
+  <dd><%= @document.fecha_rpp %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:entidad_id) %>:</strong></dt>
+  <dd><%= @document.entidad.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_avaluo) %>:</strong></dt>
+  <dd><%= @document.fecha_avaluo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:monto_avaluo) %>:</strong></dt>
+  <dd><%= @document.monto_avaluo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nombre_archivo) %>:</strong></dt>
+  <dd><%= @document.nombre_archivo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_demanda) %>:</strong></dt>
+  <dd><%= @document.numero_demanda %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_expediente) %>:</strong></dt>
+  <dd><%= @document.numero_expediente %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:numero_juzgado) %>:</strong></dt>
+  <dd><%= @document.numero_juzgado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ubicacion_juzgado) %>:</strong></dt>
+  <dd><%= @document.ubicacion_juzgado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fecha_auto_admisorio) %>:</strong></dt>
+  <dd><%= @document.fecha_auto_admisorio %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              documents_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_document_path(@document), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              document_path(@document),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,0 +1,16 @@
+<body style="background-color:#770007"><br>
+	<%= form_tag password_resets_path, :class => 'forma', :id => "NombreForm", :name => "NombreForm", :onSubmit => "return validar();", :method => :post do %>
+	<div class="form-signin"><br>
+	  <div class="text-center"><%= image_tag('email.png', :width => 70) %></div>
+	        <br>
+	        <%= label_tag "Escriba su cuenta de correo para restablecer la contraseña." %><br><br>
+	        <%= text_field_tag :email, params[:email], :class => 'form-control', :placeholder => 'ejemplo@ejemplo.com' %><br><br>
+	        <a href="/login"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Regresar</a>
+	        <button class="btn btn-primary" type="submit" style="float:right">Restablecer</button>
+	    <% end %>
+	<br><br>
+	</div>	
+  	<footer>
+  		&copy; Ruta 126 v1.0.141109
+  	</footer>
+</body>

@@ -1,0 +1,20 @@
+<body style="background-color:#770007">
+<%= render "shared/error_messages", :target => @user_session %><br>
+	<%= form_for @user_session, :as => :user_session, :url => { :action => "create" }, :html => { :class => "forma" } do |f| %>
+	<div class="form-signin"><br>
+	  <div><%= image_tag('logo.png', :width => 280)%></div>
+	        <br>
+	        <%= f.text_field :username, :class => 'form-control', :placeholder => 'Usuario', :id => 'first_field' %>
+	        <%= f.password_field :password, :class => 'form-control', :placeholder => 'Contraseña' %><br>
+	        <button class="btn btn-primary btn-block btn-danger" type="submit">Entrar</button>
+	    <% end %>
+	    <br>
+	    <p style="text-align:right"><%= link_to "¿Has olvidado tu contraseña?", new_password_reset_path %></p>
+	</div>
+	  	<div class="text-center">
+	    	<%= link_to image_tag('chrome.png'), 'http://www.google.com/intl/es-419/chrome/' %>
+	  	</div>
+	  	<footer>
+	  		Railsapp v1.0.141109
+	  	</footer>
+</body>

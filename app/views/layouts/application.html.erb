@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Banorte Tarjetas" %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <% if current_user %>
+    <div class="navbar navbar-default navbar-static-top">
+
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right" role="navigation">
+            <li class="dropdown" style="margin-top:-7px">
+              <a href="#" class="dropdown-toggle navbar-brand bold-center" data-toggle="dropdown" style="color:#2d364f"><%= current_user.username %> <span class="caret"></span><br><div style="font-size:10px;color:#d9534f;"><%= current_user.role.name %></div></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/users/">Usuarios</a></li>
+                <li><a href="/roles/">Roles</a></li>
+                <li><a href="/boxes/">Cajas</a></li>
+                <li><a href="/originators/">Originadores</a></li>
+                <li><a href="/document_types/">Tipos de documento</a></li>
+                <li><a href="/entities/">Entidades</a></li>
+                <li><a href="/cofis/">COFI</a></li>
+                <li class="divider"></li>
+                <li><%= link_to "Cerrar sesión", logout_path %></li>
+              </ul>
+            </li>
+            <li><div class="media"><img src="/assets/user.png" class="img-thumbnail" style="height:57px;"></div></li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container-fluid bold-center absolute">
+        <a class="closed" data-dismiss="alert" style="text-decoration:none" id="timer-alert"><%= bootstrap_flash %></a>
+      </div>
+      <div class="col-lg-offset-1 col-lg-10">
+        <%= yield %>
+      </div>
+    </div><!--/container-fluid-->
+
+
+  <% else %>
+    <div class="bold-center absolute"><a class="closed" data-dismiss="alert" style="text-decoration:none"><%= bootstrap_flash %></a></div>
+    <div>
+      <%= yield %>
+    </div>
+  <% end %>
+
+  </body>
+</html>

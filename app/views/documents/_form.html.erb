@@ -1,0 +1,274 @@
+<%= form_for @document, :html => { :class => "form-horizontal document" } do |f| %>
+
+  <% if @document.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @document.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :box_id, value: params[:box_id] %>
+  <div class="form-group">
+    <%= f.label :document_type_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-3">
+      <%= f.collection_select :document_type_id, DocumentType.all, :id, :name, include_blank: false %>
+    </div>
+    <%=f.error_span(:document_type_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero_credito, :class => 'control-label col-lg-2', :id => 'document_numero_credito' %>
+    <div class="col-lg-3">
+      <%= f.number_field :numero_credito, :class => 'form-control', :tabIndex => "1", :id => 'first_field' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero_escritura, :class => 'control-label col-lg-2', :id => 'document_numero_escritura' %>
+    <div class="col-lg-3">
+      <%= f.number_field :numero_escritura, :class => 'form-control', :tabIndex => "2" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_escritura, :class => 'control-label col-lg-2', :id => 'document_fecha_escritura' %>
+    <div class="col-lg-3">
+      <%= f.text_field :fecha_escritura, :class => 'form-control datepickered', :tabIndex => "3" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre_notario, :class => 'control-label col-lg-2', :id => 'document_nombre_notario' %>
+    <div class="col-lg-3">
+      <%= f.text_field :nombre_notario, :class => 'form-control', :tabIndex => "4" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero_notaria, :class => 'control-label col-lg-2', :id => 'document_numero_notaria' %>
+    <div class="col-lg-3">
+      <%= f.number_field :numero_notaria, :class => 'form-control', :tabIndex => "5" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :entity_name, :class => 'control-label col-lg-2', :id => 'document_entity_id' %>
+    <div class="col-lg-3">
+      <%= f.text_field :entity_name, data: {autocomplete_source: Entity.all.map(&:name)}, :class => 'form-control', :tabIndex => "6" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre_acreditado, :class => 'control-label col-lg-2', :id => 'document_nombre_acreditado' %>
+    <div class="col-lg-3">
+      <%= f.text_field :nombre_acreditado, :class => 'form-control', :tabIndex => "7" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :paterno_acreditado, :class => 'control-label col-lg-2', :id => 'document_paterno_acreditado' %>
+    <div class="col-lg-3">
+      <%= f.text_field :paterno_acreditado, :class => 'form-control', :tabIndex => "8" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :materno_acreditado, :class => 'control-label col-lg-2', :id => 'document_materno_acreditado' %>
+    <div class="col-lg-3">
+      <%= f.text_field :materno_acreditado, :class => 'form-control', :tabIndex => "9" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre_coacreditado_1, :class => 'control-label col-lg-2', :id => 'document_nombre_coacreditado_1' %>
+    <div class="col-lg-3">
+      <%= f.text_field :nombre_coacreditado_1, :class => 'form-control', :tabIndex => "10" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :paterno_coacreditado_1, :class => 'control-label col-lg-2', :id => 'document_paterno_coacreditado_1' %>
+    <div class="col-lg-3">
+      <%= f.text_field :paterno_coacreditado_1, :class => 'form-control', :tabIndex => "11" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :materno_coacreditado_1, :class => 'control-label col-lg-2', :id => 'document_materno_coacreditado_1' %>
+    <div class="col-lg-3">
+      <%= f.text_field :materno_coacreditado_1, :class => 'form-control', :tabIndex => "12" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre_coacreditado_2, :class => 'control-label col-lg-2', :id => 'document_nombre_coacreditado_2' %>
+    <div class="col-lg-3">
+      <%= f.text_field :nombre_coacreditado_2, :class => 'form-control', :tabIndex => "13" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :paterno_coacreditado_2, :class => 'control-label col-lg-2', :id => 'document_paterno_coacreditado_2' %>
+    <div class="col-lg-3">
+      <%= f.text_field :paterno_coacreditado_2, :class => 'form-control', :tabIndex => "14" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :materno_coacreditado_2, :class => 'control-label col-lg-2', :id => 'document_materno_coacreditado_2' %>
+    <div class="col-lg-3">
+      <%= f.text_field :materno_coacreditado_2, :class => 'form-control', :tabIndex => "15" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre_coacreditado_3, :class => 'control-label col-lg-2', :id => 'document_nombre_coacreditado_3' %>
+    <div class="col-lg-3">
+      <%= f.text_field :nombre_coacreditado_3, :class => 'form-control', :tabIndex => "16" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :paterno_coacreditado_3, :class => 'control-label col-lg-2', :id => 'document_paterno_coacreditado_3' %>
+    <div class="col-lg-3">
+      <%= f.text_field :paterno_coacreditado_3, :class => 'form-control', :tabIndex => "17" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :materno_coacreditado_3, :class => 'control-label col-lg-2', :id => 'document_materno_coacreditado_3' %>
+    <div class="col-lg-3">
+      <%= f.text_field :materno_coacreditado_3, :class => 'form-control', :tabIndex => "18" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :originator_name, :class => 'control-label col-lg-2', :id => 'document_originator_id' %>
+    <div class="col-lg-3">
+      <%= f.text_field :originator_name, data: {autocomplete_source: Originator.all.map(&:name)}, :class => 'form-control', :tabIndex => "19" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :cofi_name, :class => 'control-label col-lg-2', :id => 'document_cofi_id' %>
+    <div class="col-lg-3">
+      <%= f.text_field :cofi_name, data: {autocomplete_source: Cofi.all.map(&:name)}, :class => 'form-control', :tabIndex => "20" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :calle, :class => 'control-label col-lg-2', :id => 'document_calle' %>
+    <div class="col-lg-3">
+      <%= f.text_field :calle, :class => 'form-control', :tabIndex => "21" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :colonia, :class => 'control-label col-lg-2', :id => 'document_colonia' %>
+    <div class="col-lg-3">
+      <%= f.text_field :colonia, :class => 'form-control', :tabIndex => "22" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :municipio, :class => 'control-label col-lg-2', :id => 'document_municipio' %>
+    <div class="col-lg-3">
+      <%= f.text_field :municipio, :class => 'form-control', :tabIndex => "23" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado_name, :class => 'control-label col-lg-2', :id => 'document_estado_id' %>
+    <div class="col-lg-3">
+      <%= f.text_field :estado_name, data: {autocomplete_source: Estado.all.map(&:name)}, :class => 'form-control', :tabIndex => "24" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :jurisdiccion_name, :class => 'control-label col-lg-2', :id => 'document_jurisdiccion_id' %>
+    <div class="col-lg-3">
+      <%= f.text_field :jurisdiccion_name, data: {autocomplete_source: Jurisdiccion.all.map(&:name)}, :class => 'form-control', :tabIndex => "25" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :folio_real_rpp, :class => 'control-label col-lg-2', :id => 'document_folio_real_rpp' %>
+    <div class="col-lg-3">
+      <%= f.text_field :folio_real_rpp, :class => 'form-control', :tabIndex => "26" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :seccion_rpp, :class => 'control-label col-lg-2', :id => 'document_seccion_rpp' %>
+    <div class="col-lg-3">
+      <%= f.text_field :seccion_rpp, :class => 'form-control', :tabIndex => "27" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :libro_rpp, :class => 'control-label col-lg-2', :id => 'document_libro_rpp' %>
+    <div class="col-lg-3">
+      <%= f.text_field :libro_rpp, :class => 'form-control', :tabIndex => "28" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :volumen_rpp, :class => 'control-label col-lg-2', :id => 'document_volumen_rpp' %>
+    <div class="col-lg-3">
+      <%= f.text_field :volumen_rpp, :class => 'form-control', :tabIndex => "29" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :partida_rpp, :class => 'control-label col-lg-2', :id => 'document_partida_rpp' %>
+    <div class="col-lg-3">
+      <%= f.text_field :partida_rpp, :class => 'form-control', :tabIndex => "30" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_rpp, :class => 'control-label col-lg-2', :id => 'document_fecha_rpp' %>
+    <div class="col-lg-3">
+      <%= f.text_field :fecha_rpp, :class => 'form-control datepickered', :tabIndex => "31" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :entidad_name, :class => 'control-label col-lg-2', :id => 'document_entidad_id' %>
+    <div class="col-lg-3">
+      <%= f.text_field :entidad_name, data: {autocomplete_source: Entidad.all.map(&:name)}, :class => 'form-control', :tabIndex => "32" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_avaluo, :class => 'control-label col-lg-2', :id => 'document_fecha_avaluo' %>
+    <div class="col-lg-3">
+      <%= f.text_field :fecha_avaluo, :class => 'form-control datepickered', :tabIndex => "33" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :monto_avaluo, :class => 'control-label col-lg-2', :id => 'document_monto_avaluo' %>
+    <div class="col-lg-3">
+      <%= f.number_field :monto_avaluo, :class => 'form-control', :tabIndex => "34" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre_archivo, :class => 'control-label col-lg-2', :id => 'document_nombre_archivo' %>
+    <div class="col-lg-3">
+      <%= f.text_field :nombre_archivo, :class => 'form-control', :tabIndex => "35" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero_demanda, :class => 'control-label col-lg-2', :id => 'document_numero_demanda' %>
+    <div class="col-lg-3">
+      <%= f.number_field :numero_demanda, :class => 'form-control', :tabIndex => "36", :id => 'numero_demanda' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero_expediente, :class => 'control-label col-lg-2', :id => 'document_numero_expediente' %>
+    <div class="col-lg-3">
+      <%= f.number_field :numero_expediente, :class => 'form-control', :tabIndex => "37" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :numero_juzgado, :class => 'control-label col-lg-2', :id => 'document_numero_juzgado' %>
+    <div class="col-lg-3">
+      <%= f.number_field :numero_juzgado, :class => 'form-control', :tabIndex => "38" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ubicacion_juzgado, :class => 'control-label col-lg-2', :id => 'document_ubicacion_juzgado' %>
+    <div class="col-lg-3">
+      <%= f.text_field :ubicacion_juzgado, :class => 'form-control', :tabIndex => "39" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :fecha_auto_admisorio, :class => 'control-label col-lg-2', :id => 'document_fecha_auto_admisorio' %>
+    <div class="col-lg-3">
+      <%= f.text_field :fecha_auto_admisorio, :class => 'form-control datepickered', :tabIndex => "40" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Regresar', boxes_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

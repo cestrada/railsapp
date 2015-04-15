@@ -1,0 +1,52 @@
+<%- model_class = User -%>
+
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+
+<div class="table-responsive">
+  <table class="table table-hover datatable">
+    <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:username) %></th>
+        <th><%= model_class.human_attribute_name(:email) %></th>
+        <th class="text-center"><%= model_class.human_attribute_name(:role_id) %></th>
+        <th class="text-center">Estatus</th>
+        <th class="text-center"><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.username, user_path(user) %></td>
+          <td><%= user.email %></td>
+          <td class="text-center"><%= user.role.name unless user.role.nil? %></td>
+          <td class="text-center">
+              <% if user.failed_login_count > 5 %>
+                <%= form_for user do |f| %>
+                  <%= f.hidden_field :failed_login_count, :value => 0 %>
+                  <%= f.submit 'Habilitar', :data => { :confirm => "¿Seguro que desea habilitarlo?" }, :class => 'btn btn-xs btn-success', :style => 'width:75px' %>
+                <% end %>
+              <% else %>
+                <%= form_for user do |f| %>
+                  <%= f.hidden_field :failed_login_count, :value => 10 %>
+                  <%= f.submit 'Deshabilitar', :data => { :confirm => "¿Seguro que desea deshabilitarlo?" }, :class => 'btn btn-xs btn-warning' %>
+                <% end %>
+              <% end %>
+          </td>
+          <td style="padding:10px;" class="text-center">
+            <%= link_to 'Cambiar contraseña',
+                        edit_user_path(user), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        user_path(user),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_user_path,
+            :class => 'btn btn-primary' %>

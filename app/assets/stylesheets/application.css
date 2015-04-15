@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery-ui.css
+ *= require datepickered.css
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require_tree .
+ */
+
+.forma {
+  margin: 0 0 20px;
+  padding-top: 10%;
+}
+.form-signin {
+  max-width: 350px;
+  height: auto;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background: #e8ebf2;
+  background-color: #e8ebf2;
+  z-index: 10;
+  display: block;
+  border: 2px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.bold-center {
+  text-align: center;
+  font-weight: bold;
+}
+.bold-right {
+  text-align: right;
+  font-weight: bold;
+}
+.absolute {
+  position: absolute;
+  width: 100%;
+  font-size: 18px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin: 0 0 100px;
+  /* bottom = footer height */
+}
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 7%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.closed:hover,
+.closed:focus {
+  cursor: pointer;
+}
+
+table thead {
+  border-bottom: double 3px #428bca;
+  font-size: 16px;
+}
+
+#date_today {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+
+#head {
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: double 3px #428bca;
+}
+
+.status-true {
+  text-decoration: line-through;
+  color:gray;
+}
+.status-true a {
+  text-decoration: none;
+  color: gray;
+}
+.main-menu{
+  text-align: center;
+}
+.main-menu td p {
+  font-size: 20px;
+  font-weight: bold;
+  background-color:#efefef;
+}
+.main-menu td div {
+  line-height: 0px;
+}
+.main-menu td:hover {
+  background: #efefef;
+}
+#heading{
+  height:15em;
+  width:13em;
+}
+#heading img{
+  max-height:100%;
+  max-width: 100%;
+}

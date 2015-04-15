@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  credit_number: 1
+  name: MyString
+  last_name: MyString
+  mother_last_name: MyString
+
+two:
+  credit_number: 1
+  name: MyString
+  last_name: MyString
+  mother_last_name: MyString
