@@ -9,14 +9,14 @@ set :deploy_to, "/var/www/#{application}"
 
 # Opciones de configuración si estás usando keypairs para acceder vía SSH al servidor. Hay que cambiar el nombre de la llave.pem
 set :ssh_options, {
-  keys: %w(/Users/Carlos/.ssh/Virginia.pem),
+  keys: %w(/Users/Carlos/.ssh/Fonacot.pem),
   forward_agent: false,
   auth_methods: %w(publickey password)
 }
 
 # Opciones para cargar la aplicación desde el servidor de repositorios GITHUB
 set :scm, :git
-set :repository,  "git@github.com:caeg85/#{application}.git"
+set :repository,  "git@github.com:cestrada/#{application}.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
